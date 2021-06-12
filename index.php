@@ -17,6 +17,7 @@
                 background-size: 50%;
                 background-repeat: no-repeat;
                 background-position: center;
+                background-color: #8c8c8c;
             }
         </style>
     </head>
