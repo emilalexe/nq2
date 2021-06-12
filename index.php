@@ -10,8 +10,8 @@
         <style>
             body{
                 width: 100%;
-                height: 100vh;
-                margin: 0px;
+                min-height: 100vh;
+                margin: 0;
                 padding: unset;
                 background-image: url("/nq2-logo.svg");
                 background-size: 50%;
@@ -21,6 +21,6 @@
         </style>
     </head>
     <body>
-        
+        <p><?php echo 'Copyright &copy; '.date('Y');?></p>
     </body>
 </html>
