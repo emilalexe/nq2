@@ -1,0 +1,11 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: unset;
+    background-image: url("/assets/img/nq2-logo.svg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #8c8c8c;
+}
