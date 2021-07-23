@@ -9,11 +9,24 @@
  * This functions is used for sql queries
  */
 function db_connect(){
+    /* SQL details */
     $con = mysqli_connect('localhost','gniihhdh_nq_admin','2AqU$o*=0wXM','gniihhdh_nq2');
-
+    if(isset($_GET['debug'])){
+        if($_GET['debug'] == 1){
+            debugMode(1);
+        }else{
+            debugMode(0);
+        }
+        header("Location: /");
+    }
 // Check connection
     if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        if(isset($_COOKIE['debug']))
+        {
+            echo '<script>console.log(' . json_encode('Failed to connect to MySQL: ' . mysqli_connect_error()) . ');</script>';
+        }else {
+            echo '<script>console.log("Failed to connect to MySQL.");</script>';
+        }
         exit();
     }
     return $con;
