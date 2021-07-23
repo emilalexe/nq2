@@ -1,8 +1,0 @@
-/application/
-/composer
-/composer.lock
-/php-cs-fixer
-/phpstan
-/phpunit
-/psalm
-/vendor/
