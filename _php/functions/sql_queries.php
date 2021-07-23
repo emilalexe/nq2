@@ -9,6 +9,7 @@
  * This functions is used for sql queries
  */
 function db_connect(){
+    /* SQL details */
     $con = mysqli_connect('localhost','gniihhdh_nq_admin','2AqU$o*=0wXM','gniihhdh_nq2');
     if(isset($_GET['debug'])){
         if($_GET['debug'] == 1){
