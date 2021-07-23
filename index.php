@@ -11,7 +11,6 @@ if(isset($_GET)){
 echo "It's working.";
  */
 include_once("_php/functions/functions.php");
-$debug = 1;
 
 _header($debug);
 _footer($debug);
