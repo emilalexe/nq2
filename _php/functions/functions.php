@@ -7,9 +7,11 @@
  */
 
 include_once("sql_queries.php");
+
 function debug(){
     return db_select('SELECT value FROM settings WHERE name = "debug";')[0]["value"];
 }
+
 function debug_to_console($data) {
     $output = $data;
     if (is_array($output))
@@ -17,7 +19,9 @@ function debug_to_console($data) {
 
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
+
 $debug = debug();
+
 if($debug){
     debugMode($debug);
     debug_to_console("functions.php");
@@ -30,9 +34,14 @@ function debugMode($value){
         setcookie("debug", $value);
         echo'<script>console.log("Debug: ON");</script>';
     }else{
-        unset($_COOKIE['debug']);
-        setcookie('debug', null, -1);
-        echo'<script>console.log("Debug: OFF");</script>';
+        if(isset($value)){
+            unset($_COOKIE['debug']);
+            setcookie('debug', null, -1);
+            echo'<script>console.log("Debug: OFF");</script>';
+        }else{
+            unset($_COOKIE['debug']);
+            setcookie('debug', null, -1);
+        }
     }
 }
 
